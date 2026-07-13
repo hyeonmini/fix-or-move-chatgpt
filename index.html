@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>서홍마을4단지 — 고칠까, 옮길까</title>
+<style>
+:root{--bg:#f4f5f7;--card:#fff;--ink:#15171a;--muted:#6b7280;--line:#e6e8ec;--accent:#1f6feb;--good:#16794a;--warn:#a05a00;--bad:#b42318;--shadow:0 14px 40px rgba(20,25,35,.08)}
+*{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:1160px;margin:auto;padding:24px}.hero{padding:54px 42px;border-radius:28px;background:linear-gradient(135deg,#101828,#22345d);color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-100px;top:-150px;background:radial-gradient(circle,rgba(93,155,255,.45),rgba(93,155,255,0))}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.hero h1{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:10px 0 20px;max-width:850px}.hero p{font-size:18px;max-width:760px;color:#d9e2f2}.verdict{margin-top:28px;display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:12px 16px;border-radius:999px;font-weight:700}.dot{width:10px;height:10px;border-radius:50%;background:#5ee6a8;box-shadow:0 0 0 6px rgba(94,230,168,.12)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 24px rgba(20,25,35,.04)}.span4{grid-column:span 4}.span5{grid-column:span 5}.span7{grid-column:span 7}.span12{grid-column:span 12}.kicker{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase}.big{font-size:34px;font-weight:800;letter-spacing:-.04em;margin-top:4px}.sub{color:var(--muted);font-size:14px}.metric{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.metric b{white-space:nowrap}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:0 0 12px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.control{border:1px solid var(--line);border-radius:16px;padding:14px}.control label{display:flex;justify-content:space-between;font-size:14px;font-weight:700}.control output{color:var(--accent)}input[type=range]{width:100%;margin-top:10px;accent-color:var(--accent)}
+.result{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.result .box{border-radius:18px;padding:18px;background:#f7f8fa}.result .box.primary{background:#edf4ff;border:1px solid #cfe0ff}.result strong{display:block;font-size:25px}.bar{height:12px;background:#edf0f4;border-radius:999px;overflow:hidden;margin-top:10px}.bar>div{height:100%;border-radius:999px;background:linear-gradient(90deg,#3c82f6,#6fa4ff);width:50%;transition:.35s}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);padding:18px;border-radius:18px}.step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef4ff;color:var(--accent);font-weight:800}.step b{display:block;margin-top:12px}.step span{font-size:14px;color:var(--muted)}
+.check{display:flex;gap:10px;align-items:flex-start;margin:12px 0}.check em{font-style:normal;font-weight:800;color:var(--good)}.footer{color:var(--muted);font-size:12px;padding:26px 4px 40px}.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef1f5;font-size:12px;margin:4px 4px 0 0}
+@media(max-width:800px){.wrap{padding:12px}.hero{padding:36px 24px;border-radius:22px}.span4,.span5,.span7,.span12{grid-column:span 12}.controls,.result,.steps{grid-template-columns:1fr}.hero h1{font-size:44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+  <div class="eyebrow">SEOHONG VILLAGE 4 · HOME DECISION LAB</div>
+  <h1>이 집을 고칠까,<br>다른 집으로 옮길까?</h1>
+  <p>현재 자산, 2.4% 주담대, 실제 단열 문제와 이사 비용을 한 화면에서 비교합니다. 숫자를 움직이면 결론이 즉시 바뀝니다.</p>
+  <div class="verdict"><span class="dot"></span><span id="heroVerdict">현재 입력 기준: 공사 쪽이 유리</span></div>
+</section>
+
+<section class="grid">
+  <article class="card span4"><div class="kicker">현재 집 가치</div><div class="big" id="equity">7.8억</div><div class="sub">시세 − 남은 주담대</div></article>
+  <article class="card span4"><div class="kicker">미실현 상승분</div><div class="big" id="gain">4.29억</div><div class="sub">현재 시세 − 6.71억 매수가</div></article>
+  <article class="card span4"><div class="kicker">지켜야 할 금융자산</div><div class="big good">2.4%</div><div class="sub">30년 주담대 · 월 약 130만 원</div></article>
+
+  <article class="card span5">
+    <div class="kicker">집이 추운 이유</div><h2>보고서와 생활 증상이 일치한다</h2>
+    <div class="metric"><span>침실1 외기 접촉 벽</span><b class="bad">단열 저하 지적</b></div>
+    <div class="metric"><span>실제 체감</span><b class="bad">벽이 매우 차가움</b></div>
+    <div class="metric"><span>창호</span><b class="bad">외풍 유입</b></div>
+    <div class="metric"><span>난방비</span><b class="bad">같은 동 최상위 수준</b></div>
+    <p class="sub">즉, 취향성 인테리어가 아니라 주거 성능 개선 공사에 가깝습니다.</p>
+  </article>
+
+  <article class="card span7">
+    <div class="kicker">Interactive calculator</div><h2>공사 vs 이사 계산기</h2>
+    <div class="controls">
+      <div class="control"><label>현재 집 시세 <output id="vHome">11.0억</output></label><input id="home" type="range" min="9" max="14" step=".1" value="11"></div>
+      <div class="control"><label>남은 주담대 <output id="vDebt">3.2억</output></label><input id="debt" type="range" min="2" max="4" step=".05" value="3.2"></div>
+      <div class="control"><label>공사비 <output id="vReno">0.25억</output></label><input id="reno" type="range" min=".15" max=".5" step=".01" value=".25"></div>
+      <div class="control"><label>임시거주·왕복이사·청소 <output id="vTemp">0.04억</output></label><input id="temp" type="range" min=".02" max=".1" step=".005" value=".04"></div>
+      <div class="control"><label>옮길 집 가격 <output id="vNew">13.0억</output></label><input id="newHome" type="range" min="10" max="18" step=".1" value="13"></div>
+      <div class="control"><label>신규 대출 금리 <output id="vRate">4.0%</output></label><input id="rate" type="range" min="2.5" max="6.5" step=".1" value="4"></div>
+    </div>
+    <div class="result">
+      <div class="box primary"><span class="sub">공사 총투입</span><strong id="renoTotal">2,900만</strong><div class="sub">공사 + 임시거주/이사/청소</div></div>
+      <div class="box"><span class="sub">이사 시 필요한 신규 대출</span><strong id="newLoan">5.42억</strong><div class="sub">취득·중개·기타 거래비용 4% 가정</div></div>
+      <div class="box"><span class="sub">신규대출 월상환 추정</span><strong id="newPayment">259만</strong><div class="sub">30년 원리금균등 단순 추정</div></div>
+      <div class="box"><span class="sub">현재 대비 월 부담 증가</span><strong id="deltaPayment" class="bad">+129만</strong><div class="sub">현재 월 130만 원 기준</div></div>
+    </div>
+    <div class="bar"><div id="scoreBar"></div></div>
+    <p class="sub" id="scoreText">공사 선호도 78/100 — 현재 문제는 대부분 공사로 해결 가능하고, 저금리 대출을 유지하는 가치가 큽니다.</p>
+  </article>
+
+  <article class="card span12">
+    <div class="kicker">Execution plan</div><h2>현실적인 실행 순서</h2>
+    <div class="steps">
+      <div class="step"><i>1</i><b>지원·조건 확정</b><span>그린리모델링 적용 가능 범위와 지원 방식부터 문서로 확인.</span></div>
+      <div class="step"><i>2</i><b>동일 사양 3견적</b><span>창호 등급, 유리, 프레임, 기밀 시공, 단열 두께를 동일하게 맞춰 비교.</span></div>
+      <div class="step"><i>3</i><b>집 완전 비우기</b><span>전체 포장이사 → 1주 단기임대. 공사 5일이면 환기·청소 버퍼까지 고려해 7~10일.</span></div>
+      <div class="step"><i>4</i><b>완료 검증</b><span>창호 외풍, 우레탄 충진, 단열 연결부, 결로 취약점과 마감 상태를 체크.</span></div>
+    </div>
+  </article>
+
+  <article class="card span7">
+    <div class="kicker">Recommendation</div><h2>현재 결론: 팔기보다 고치는 쪽</h2>
+    <div class="check"><em>✓</em><div><b>추위·외풍은 고칠 수 있는 문제다.</b><div class="sub">입지, 평면, 층간소음처럼 공사로 못 바꾸는 문제가 아직 핵심 불만으로 나오지 않았습니다.</div></div></div>
+    <div class="check"><em>✓</em><div><b>2.4% 대출은 매우 큰 방어막이다.</b><div class="sub">새 집 가격이 높아질수록 더 비싼 신규대출로 갈아타게 될 가능성이 큽니다.</div></div></div>
+    <div class="check"><em>✓</em><div><b>공사 효과를 체감할 가능성이 높다.</b><div class="sub">진단 결과, 차가운 벽, 창문 외풍, 높은 난방비가 한 방향을 가리킵니다.</div></div></div>
+  </article>
+
+  <article class="card span5">
+    <div class="kicker">When moving wins</div><h2>다만 이 경우엔 팔아야 한다</h2>
+    <div class="metric"><span>학군·출퇴근·생활권</span><b>근본적 불만</b></div>
+    <div class="metric"><span>평수·방 수·주차</span><b>5년 내 부족</b></div>
+    <div class="metric"><span>층간소음·향·동·층</span><b>공사 불가</b></div>
+    <div class="metric"><span>정확한 다음 집</span><b>이미 특정됨</b></div>
+    <p class="sub">“추워서 막연히 이사”는 비용이 큽니다. “반드시 가야 할 집이 명확해서 이사”라면 계산이 달라집니다.</p>
+  </article>
+
+  <article class="card span12">
+    <div class="kicker">Scope to quote</div><h2>업체에 그대로 보낼 견적 범위</h2>
+    <span class="tag">거의 전체 창호 교체</span><span class="tag">로이복층유리 사양 명시</span><span class="tag">창틀 우레탄 충진</span><span class="tag">기밀테이프·실리콘</span><span class="tag">침실1 외벽 내단열</span><span class="tag">열교부 연속 시공</span><span class="tag">곰팡이 제거·방균</span><span class="tag">석고·몰딩·도배 복구</span><span class="tag">폐기물·보양·행정비 포함</span><span class="tag">공사 후 외풍 점검</span>
+  </article>
+</section>
+<div class="footer">주의: 이 페이지는 의사결정 보조용 단순 모델입니다. 세금, 중개보수, 실제 대출한도·금리, 그린리모델링 지원 조건은 계약 전 별도 확인해야 합니다. 보고서 핵심: 침실1 직접외기 벽 단열 성능 저하, PF보드 110T 권장, 발코니 열교 기준 초과, 난방 순환은 대체로 양호.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id); const ids=['home','debt','reno','temp','newHome','rate']; ids.forEach(id=>$(id).addEventListener('input',calc));
+function wonEok(x,d=1){return x.toFixed(d)+'억'}
+function moneyMan(eok){const man=Math.round(eok*10000);return man>=10000?(man/10000).toFixed(2)+'억':man.toLocaleString()+'만'}
+function monthly(principalEok, annual){let P=principalEok*1e8, r=annual/100/12, n=360;return Math.round(P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1)/10000)}
+function calc(){
+ const home=+$('home').value,debt=+$('debt').value,reno=+$('reno').value,temp=+$('temp').value,newH=+$('newHome').value,rate=+$('rate').value;
+ $('vHome').value=wonEok(home);$('vDebt').value=wonEok(debt);$('vReno').value=wonEok(reno,2);$('vTemp').value=wonEok(temp,2);$('vNew').value=wonEok(newH);$('vRate').value=rate.toFixed(1)+'%';
+ $('equity').textContent=wonEok(home-debt);$('gain').textContent=wonEok(home-6.71,2);
+ const totalR=reno+temp; $('renoTotal').textContent=moneyMan(totalR);
+ const saleCosts=home*.01; const buyCosts=newH*.04; const usable=home-debt-saleCosts; const loan=Math.max(0,newH+buyCosts-usable);
+ $('newLoan').textContent=wonEok(loan,2); const mp=monthly(loan,rate); $('newPayment').textContent=mp+'만'; const delta=mp-130; $('deltaPayment').textContent=(delta>=0?'+':'')+delta+'만'; $('deltaPayment').className=delta>20?'bad':delta<0?'good':'warn';
+ let score=65; score += Math.min(18,Math.max(-18,(delta/10))); score += Math.min(10,Math.max(-10,(newH-home)*5)); score -= Math.min(12,Math.max(0,(totalR-.3)*30)); score=Math.round(Math.max(5,Math.min(95,score)));
+ $('scoreBar').style.width=score+'%'; const verdict=score>=60?'공사 쪽이 유리':score>=45?'비슷함 — 다음 집의 질을 확인':'이사 쪽도 적극 검토'; $('heroVerdict').textContent='현재 입력 기준: '+verdict;
+ $('scoreText').textContent=`공사 선호도 ${score}/100 — `+(score>=60?'현재 문제는 대부분 공사로 해결 가능하고, 저금리 대출을 유지하는 가치가 큽니다.':score>=45?'재무 차이는 크지 않습니다. 이사로만 해결되는 비재무적 이점이 있는지가 핵심입니다.':'새 집 가격과 대출 부담이 상대적으로 낮아 이사의 실익이 커졌습니다.');
+}
+calc();
+</script>
+</body>
+</html>
