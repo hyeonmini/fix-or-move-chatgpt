@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>서홍마을4단지 — 고칠까, 옮길까</title>
 <style>
-:root{--bg:#f4f5f7;--card:#fff;--ink:#15171a;--muted:#6b7280;--line:#e6e8ec;--accent:#1f6feb;--good:#16794a;--warn:#a05a00;--bad:#b42318;--shadow:0 14px 40px rgba(20,25,35,.08)}
+:root{--bg:#f6f3ed;--card:#fffdf9;--ink:#17201b;--muted:#68736c;--line:#e6e0d6;--accent:#19704d;--accent2:#d79a45;--good:#16794a;--warn:#a05a00;--bad:#b42318;--shadow:0 18px 48px rgba(52,63,55,.10)}
 *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Pretendard,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:1160px;margin:auto;padding:24px}.hero{padding:54px 42px;border-radius:28px;background:linear-gradient(135deg,#101828,#22345d);color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-100px;top:-150px;background:radial-gradient(circle,rgba(93,155,255,.45),rgba(93,155,255,0))}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.hero h1{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:10px 0 20px;max-width:850px}.hero p{font-size:18px;max-width:760px;color:#d9e2f2}.verdict{margin-top:28px;display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:12px 16px;border-radius:999px;font-weight:700}.dot{width:10px;height:10px;border-radius:50%;background:#5ee6a8;box-shadow:0 0 0 6px rgba(94,230,168,.12)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 8px 24px rgba(20,25,35,.04)}.span4{grid-column:span 4}.span5{grid-column:span 5}.span7{grid-column:span 7}.span12{grid-column:span 12}.kicker{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase}.big{font-size:34px;font-weight:800;letter-spacing:-.04em;margin-top:4px}.sub{color:var(--muted);font-size:14px}.metric{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.metric b{white-space:nowrap}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
-h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:0 0 12px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.control{border:1px solid var(--line);border-radius:16px;padding:14px}.control label{display:flex;justify-content:space-between;font-size:14px;font-weight:700}.control output{color:var(--accent)}input[type=range]{width:100%;margin-top:10px;accent-color:var(--accent)}
-.result{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.result .box{border-radius:18px;padding:18px;background:#f7f8fa}.result .box.primary{background:#edf4ff;border:1px solid #cfe0ff}.result strong{display:block;font-size:25px}.bar{height:12px;background:#edf0f4;border-radius:999px;overflow:hidden;margin-top:10px}.bar>div{height:100%;border-radius:999px;background:linear-gradient(90deg,#3c82f6,#6fa4ff);width:50%;transition:.35s}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);padding:18px;border-radius:18px}.step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eef4ff;color:var(--accent);font-weight:800}.step b{display:block;margin-top:12px}.step span{font-size:14px;color:var(--muted)}
+.wrap{max-width:1160px;margin:auto;padding:24px}.hero{padding:54px 42px;border-radius:28px;background:linear-gradient(135deg,#173c2e,#245f47 58%,#d79a45 145%);color:white;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-100px;top:-150px;background:radial-gradient(circle,rgba(255,220,154,.42),rgba(255,220,154,0))}.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}.hero h1{font-size:clamp(36px,7vw,72px);line-height:1.02;margin:10px 0 20px;max-width:850px}.hero p{font-size:18px;max-width:760px;color:#d9e2f2}.update-note{display:flex;align-items:center;gap:10px;margin:0 0 22px;padding:10px 13px;width:max-content;max-width:100%;border-radius:12px;background:#fff7e8;color:#7a4a00;border:1px solid #f1d6a5;font-size:13px;font-weight:800}.update-note:before{content:"UPDATED";font-size:10px;letter-spacing:.12em;background:#d79a45;color:white;padding:4px 7px;border-radius:999px}.verdict{margin-top:28px;display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:12px 16px;border-radius:999px;font-weight:700}.dot{width:10px;height:10px;border-radius:50%;background:#5ee6a8;box-shadow:0 0 0 6px rgba(94,230,168,.12)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 10px 28px rgba(43,54,46,.05)}.card h2:after{content:"";display:block;width:42px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-top:12px}.card.featured{border:1px solid #cddfd4;background:linear-gradient(180deg,#ffffff,#f3faf6)}.span4{grid-column:span 4}.span5{grid-column:span 5}.span7{grid-column:span 7}.span12{grid-column:span 12}.kicker{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase}.big{font-size:34px;font-weight:800;letter-spacing:-.04em;margin-top:4px}.sub{color:var(--muted);font-size:14px}.metric{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.metric b{white-space:nowrap}.good{color:var(--good)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:0 0 12px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:14px}.control{border:1px solid var(--line);border-radius:16px;padding:14px;background:#fff}.control:focus-within{border-color:#8fbea5;box-shadow:0 0 0 4px rgba(25,112,77,.08)}.control label{display:flex;justify-content:space-between;font-size:14px;font-weight:700}.control output{color:var(--accent)}input[type=range]{width:100%;margin-top:10px;accent-color:var(--accent)}
+.result{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.result .box{border-radius:18px;padding:18px;background:#f7f8fa}.result .box.primary{background:#ecf8f1;border:1px solid #c7e5d3}.result strong{display:block;font-size:25px}.bar{height:12px;background:#edf0f4;border-radius:999px;overflow:hidden;margin-top:10px}.bar>div{height:100%;border-radius:999px;background:linear-gradient(90deg,#19704d,#d79a45);width:50%;transition:.35s}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);padding:18px;border-radius:18px}.step i{font-style:normal;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e8f4ed;color:var(--accent);font-weight:800}.step b{display:block;margin-top:12px}.step span{font-size:14px;color:var(--muted)}
 .check{display:flex;gap:10px;align-items:flex-start;margin:12px 0}.check em{font-style:normal;font-weight:800;color:var(--good)}.footer{color:var(--muted);font-size:12px;padding:26px 4px 40px}.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef1f5;font-size:12px;margin:4px 4px 0 0}
 @media(max-width:800px){.wrap{padding:12px}.hero{padding:36px 24px;border-radius:22px}.span4,.span5,.span7,.span12{grid-column:span 12}.controls,.result,.steps{grid-template-columns:1fr}.hero h1{font-size:44px}}
 </style>
@@ -18,6 +18,7 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
 <body>
 <div class="wrap">
 <section class="hero">
+  <div class="update-note">2주 임시거주 · 신축 단기임대 · 짐 전체 반입 반영</div>
   <div class="eyebrow">SEOHONG VILLAGE 4 · HOME DECISION LAB</div>
   <h1>이 집을 고칠까,<br>다른 집으로 옮길까?</h1>
   <p>현재 자산, 2.4% 주담대, 실제 단열 문제와 이사 비용을 한 화면에서 비교합니다. 숫자를 움직이면 결론이 즉시 바뀝니다.</p>
@@ -38,8 +39,8 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
     <p class="sub">즉, 취향성 인테리어가 아니라 주거 성능 개선 공사에 가깝습니다.</p>
   </article>
 
-  <article class="card span7">
-    <div class="kicker">Interactive calculator</div><h2>공사 vs 이사 계산기</h2>
+  <article class="card span7 featured">
+    <div class="kicker">Interactive calculator · updated</div><h2>공사 vs 이사 계산기</h2>
     <div class="controls">
       <div class="control"><label>현재 집 시세 <output id="vHome">11.0억</output></label><input id="home" type="range" min="9" max="14" step=".1" value="11"></div>
       <div class="control"><label>남은 주담대 <output id="vDebt">3.2억</output></label><input id="debt" type="range" min="2" max="4" step=".05" value="3.2"></div>
@@ -85,8 +86,8 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
   </article>
 
 
-  <article class="card span12">
-    <div class="kicker">Red team review</div><h2>낙관론을 깨고 다시 본 결과</h2>
+  <article class="card span12 featured">
+    <div class="kicker">Red team review · v2</div><h2>낙관론을 깨고 다시 본 결과</h2>
     <div class="result">
       <div class="box"><span class="sub">가장 큰 과소평가 위험</span><strong>공사 범위 증가</strong><div class="sub">창 철거 후 몰딩·벽체·결로 손상이 드러나면 10~20% 예비비가 필요합니다.</div></div>
       <div class="box"><span class="sub">가장 큰 실행 위험</span><strong>2주 일정 초과</strong><div class="sub">창호 제작 지연, 도배 건조, 하자 보수까지 포함해 숙소 연장 옵션을 확보해야 합니다.</div></div>
@@ -110,7 +111,7 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
     <span class="tag">거의 전체 창호 교체</span><span class="tag">로이복층유리 사양 명시</span><span class="tag">창틀 우레탄 충진</span><span class="tag">기밀테이프·실리콘</span><span class="tag">침실1 외벽 내단열</span><span class="tag">열교부 연속 시공</span><span class="tag">곰팡이 제거·방균</span><span class="tag">석고·몰딩·도배 복구</span><span class="tag">폐기물·보양·행정비 포함</span><span class="tag">공사 후 외풍 점검</span>
   </article>
 </section>
-<div class="footer">주의: 이 페이지는 레드팀·어드바이저 관점으로 재검토한 의사결정 보조용 단순 모델입니다. 세금, 중개보수, 실제 대출한도·금리, 그린리모델링 지원 조건은 계약 전 별도 확인해야 합니다. 보고서 핵심: 침실1 직접외기 벽 단열 성능 저하, PF보드 110T 권장, 발코니 열교 기준 초과, 난방 순환은 대체로 양호.</div>
+<div class="footer"><b>UPDATE 02</b> · 2주 단기임대 및 짐 전체 반입 시나리오 반영<br><br>주의: 이 페이지는 레드팀·어드바이저 관점으로 재검토한 의사결정 보조용 단순 모델입니다. 세금, 중개보수, 실제 대출한도·금리, 그린리모델링 지원 조건은 계약 전 별도 확인해야 합니다. 보고서 핵심: 침실1 직접외기 벽 단열 성능 저하, PF보드 110T 권장, 발코니 열교 기준 초과, 난방 순환은 대체로 양호.</div>
 </div>
 <script>
 const $=id=>document.getElementById(id); const ids=['home','debt','reno','temp','newHome','rate']; ids.forEach(id=>$(id).addEventListener('input',calc));
