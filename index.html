@@ -44,13 +44,13 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
       <div class="control"><label>현재 집 시세 <output id="vHome">11.0억</output></label><input id="home" type="range" min="9" max="14" step=".1" value="11"></div>
       <div class="control"><label>남은 주담대 <output id="vDebt">3.2억</output></label><input id="debt" type="range" min="2" max="4" step=".05" value="3.2"></div>
       <div class="control"><label>공사비 <output id="vReno">0.25억</output></label><input id="reno" type="range" min=".15" max=".5" step=".01" value=".25"></div>
-      <div class="control"><label>임시거주·왕복이사·청소 <output id="vTemp">0.04억</output></label><input id="temp" type="range" min=".02" max=".1" step=".005" value=".04"></div>
+      <div class="control"><label>2주 단기임대·왕복이사·청소 <output id="vTemp">0.055억</output></label><input id="temp" type="range" min=".03" max=".12" step=".005" value=".055"></div>
       <div class="control"><label>옮길 집 가격 <output id="vNew">13.0억</output></label><input id="newHome" type="range" min="10" max="18" step=".1" value="13"></div>
       <div class="control"><label>신규 대출 금리 <output id="vRate">4.0%</output></label><input id="rate" type="range" min="2.5" max="6.5" step=".1" value="4"></div>
     </div>
     <div class="result">
-      <div class="box primary"><span class="sub">공사 총투입</span><strong id="renoTotal">2,900만</strong><div class="sub">공사 + 임시거주/이사/청소</div></div>
-      <div class="box"><span class="sub">이사 시 필요한 신규 대출</span><strong id="newLoan">5.42억</strong><div class="sub">취득·중개·기타 거래비용 4% 가정</div></div>
+      <div class="box primary"><span class="sub">공사 총투입</span><strong id="renoTotal">2,900만</strong><div class="sub">공사 + 2주 단기임대/왕복이사/청소</div></div>
+      <div class="box"><span class="sub">이사 시 필요한 신규 대출</span><strong id="newLoan">5.42억</strong><div class="sub">매수·매도 거래비용을 단순 합산한 보수적 가정</div></div>
       <div class="box"><span class="sub">신규대출 월상환 추정</span><strong id="newPayment">259만</strong><div class="sub">30년 원리금균등 단순 추정</div></div>
       <div class="box"><span class="sub">현재 대비 월 부담 증가</span><strong id="deltaPayment" class="bad">+129만</strong><div class="sub">현재 월 130만 원 기준</div></div>
     </div>
@@ -63,7 +63,7 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
     <div class="steps">
       <div class="step"><i>1</i><b>지원·조건 확정</b><span>그린리모델링 적용 가능 범위와 지원 방식부터 문서로 확인.</span></div>
       <div class="step"><i>2</i><b>동일 사양 3견적</b><span>창호 등급, 유리, 프레임, 기밀 시공, 단열 두께를 동일하게 맞춰 비교.</span></div>
-      <div class="step"><i>3</i><b>집 완전 비우기</b><span>전체 포장이사 → 1주 단기임대. 공사 5일이면 환기·청소 버퍼까지 고려해 7~10일.</span></div>
+      <div class="step"><i>3</i><b>집 완전 비우기</b><span>전체 포장이사 → 신축 단기임대 2주. 짐을 모두 들고 들어가 보관비를 줄이고, 공사·건조·청소·환기 버퍼를 확보.</span></div>
       <div class="step"><i>4</i><b>완료 검증</b><span>창호 외풍, 우레탄 충진, 단열 연결부, 결로 취약점과 마감 상태를 체크.</span></div>
     </div>
   </article>
@@ -84,12 +84,33 @@ h2{font-size:30px;letter-spacing:-.04em;margin:0 0 8px}h3{font-size:20px;margin:
     <p class="sub">“추워서 막연히 이사”는 비용이 큽니다. “반드시 가야 할 집이 명확해서 이사”라면 계산이 달라집니다.</p>
   </article>
 
+
+  <article class="card span12">
+    <div class="kicker">Red team review</div><h2>낙관론을 깨고 다시 본 결과</h2>
+    <div class="result">
+      <div class="box"><span class="sub">가장 큰 과소평가 위험</span><strong>공사 범위 증가</strong><div class="sub">창 철거 후 몰딩·벽체·결로 손상이 드러나면 10~20% 예비비가 필요합니다.</div></div>
+      <div class="box"><span class="sub">가장 큰 실행 위험</span><strong>2주 일정 초과</strong><div class="sub">창호 제작 지연, 도배 건조, 하자 보수까지 포함해 숙소 연장 옵션을 확보해야 합니다.</div></div>
+      <div class="box"><span class="sub">가장 큰 판단 오류</span><strong>집 전체 성능 착각</strong><div class="sub">침실1 단열과 창호가 좋아져도 향·층·외벽 면적·난방 제어 문제는 남을 수 있습니다.</div></div>
+      <div class="box"><span class="sub">이사 쪽 숨은 비용</span><strong>거래비용 + 금리</strong><div class="sub">중개, 취득, 법무, 이사, 새집 손보기와 신규 대출 금리를 모두 합쳐야 합니다.</div></div>
+    </div>
+    <p class="sub"><b>레드팀 결론:</b> 공사는 여전히 우세하지만, “2,500만 원이면 끝”으로 보면 안 됩니다. 계약 예산은 공사비의 15% 예비비와 숙소 1주 연장 가능성까지 포함해 잡아야 합니다.</p>
+  </article>
+
+  <article class="card span12">
+    <div class="kicker">Advisor decision rule</div><h2>결정 기준은 집값 상승분이 아니라 다음 7년의 생활이다</h2>
+    <div class="metric"><span>현재 불만이 추위·외풍 중심</span><b class="good">공사로 해결 가능</b></div>
+    <div class="metric"><span>학군·평수·주차·입지 불만</span><b>아직 핵심 아님</b></div>
+    <div class="metric"><span>저금리 2.4% 대출 유지 가치</span><b class="good">매우 큼</b></div>
+    <div class="metric"><span>다음 집이 명확히 특정됐는가</span><b class="warn">아니면 이사 보류</b></div>
+    <p class="sub"><b>어드바이저 결론:</b> 태오의 초등 입학 전후까지 5~7년 이상 살 가능성이 있고, 다음 집이 구체적으로 정해지지 않았다면 창호·단열 공사를 먼저 하는 것이 합리적입니다. 반대로 3년 안에 평수나 학군 때문에 반드시 옮길 계획이면 공사는 최소 범위로 줄여야 합니다.</p>
+  </article>
+
   <article class="card span12">
     <div class="kicker">Scope to quote</div><h2>업체에 그대로 보낼 견적 범위</h2>
     <span class="tag">거의 전체 창호 교체</span><span class="tag">로이복층유리 사양 명시</span><span class="tag">창틀 우레탄 충진</span><span class="tag">기밀테이프·실리콘</span><span class="tag">침실1 외벽 내단열</span><span class="tag">열교부 연속 시공</span><span class="tag">곰팡이 제거·방균</span><span class="tag">석고·몰딩·도배 복구</span><span class="tag">폐기물·보양·행정비 포함</span><span class="tag">공사 후 외풍 점검</span>
   </article>
 </section>
-<div class="footer">주의: 이 페이지는 의사결정 보조용 단순 모델입니다. 세금, 중개보수, 실제 대출한도·금리, 그린리모델링 지원 조건은 계약 전 별도 확인해야 합니다. 보고서 핵심: 침실1 직접외기 벽 단열 성능 저하, PF보드 110T 권장, 발코니 열교 기준 초과, 난방 순환은 대체로 양호.</div>
+<div class="footer">주의: 이 페이지는 레드팀·어드바이저 관점으로 재검토한 의사결정 보조용 단순 모델입니다. 세금, 중개보수, 실제 대출한도·금리, 그린리모델링 지원 조건은 계약 전 별도 확인해야 합니다. 보고서 핵심: 침실1 직접외기 벽 단열 성능 저하, PF보드 110T 권장, 발코니 열교 기준 초과, 난방 순환은 대체로 양호.</div>
 </div>
 <script>
 const $=id=>document.getElementById(id); const ids=['home','debt','reno','temp','newHome','rate']; ids.forEach(id=>$(id).addEventListener('input',calc));
@@ -101,7 +122,7 @@ function calc(){
  $('vHome').value=wonEok(home);$('vDebt').value=wonEok(debt);$('vReno').value=wonEok(reno,2);$('vTemp').value=wonEok(temp,2);$('vNew').value=wonEok(newH);$('vRate').value=rate.toFixed(1)+'%';
  $('equity').textContent=wonEok(home-debt);$('gain').textContent=wonEok(home-6.71,2);
  const totalR=reno+temp; $('renoTotal').textContent=moneyMan(totalR);
- const saleCosts=home*.01; const buyCosts=newH*.04; const usable=home-debt-saleCosts; const loan=Math.max(0,newH+buyCosts-usable);
+ const saleCosts=home*.008; const buyCosts=newH*.035; const usable=home-debt-saleCosts; const loan=Math.max(0,newH+buyCosts-usable);
  $('newLoan').textContent=wonEok(loan,2); const mp=monthly(loan,rate); $('newPayment').textContent=mp+'만'; const delta=mp-130; $('deltaPayment').textContent=(delta>=0?'+':'')+delta+'만'; $('deltaPayment').className=delta>20?'bad':delta<0?'good':'warn';
  let score=65; score += Math.min(18,Math.max(-18,(delta/10))); score += Math.min(10,Math.max(-10,(newH-home)*5)); score -= Math.min(12,Math.max(0,(totalR-.3)*30)); score=Math.round(Math.max(5,Math.min(95,score)));
  $('scoreBar').style.width=score+'%'; const verdict=score>=60?'공사 쪽이 유리':score>=45?'비슷함 — 다음 집의 질을 확인':'이사 쪽도 적극 검토'; $('heroVerdict').textContent='현재 입력 기준: '+verdict;
